@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StartConfigClient {
     public static void main(String[] args) {
         SpringApplication.run(StartConfigClient.class,args);
+        System.out.println("更新文件");
     }
 }
