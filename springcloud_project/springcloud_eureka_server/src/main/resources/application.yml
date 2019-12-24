@@ -1,0 +1,17 @@
+##应用名称
+spring:
+  application:
+    name: eureka-server
+##声明当前eurekaserver的端口号
+server:
+  port: 8001
+##配置eureka
+eureka:
+  client:
+    ##代表是否将自己注册到注册中心当中去
+    register-with-eureka: false
+    ##表明自己是注册中心
+    fetch-registry: false
+    ##配置地址
+    service-url:
+      defaultZone: http://localhost:8001/eureka

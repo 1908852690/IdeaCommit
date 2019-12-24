@@ -1,0 +1,29 @@
+##应用名称
+spring:
+  application:
+    name: order-service
+##端口号
+server:
+  port: 9002
+  ##设置Tomcat最大线程数
+  tomcat:
+    max-threads: 50
+##注册到注册中心当中去，指定注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+##配置ribbon读取时间
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+##开启断路器
+
+##因为我们在members服务中线程休眠3s，服务调用默认超过1s当做调用失败，那么就会执行服务降级的类，我们可以配置服务响应时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
